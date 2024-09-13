@@ -1,0 +1,1 @@
+This is a python based program that detects objects in a video streaming application. The goal is to create a dockerized application that be spun in any enviroment and Xynocast can cater the images over cloud.
