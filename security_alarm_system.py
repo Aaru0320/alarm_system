@@ -7,7 +7,7 @@ import torch
 import numpy as np 
 from time import time 
 from ultralytics import YOLO
-from utils.plots import colors, Annotator
+from utilis.plots.py import colors, Annotator
 
 
 import supervision as sv  
