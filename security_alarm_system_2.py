@@ -1,5 +1,5 @@
 import sys
-sys.path.append('/Users/aarushivishwakarma/theft_Detection/alarm_system/yolov5')  # Example: '/Users/aarushivishwakarma/theft_Detection/yolov5'
+sys.path.append('/Users/aarushivishwakarma/theft_Detection/alarm_system/yolov5/utils')  # Example: '/Users/aarushivishwakarma/theft_Detection/yolov5'
 
 import streamlit as st
 import cv2
@@ -7,7 +7,7 @@ import torch
 import numpy as np 
 from time import time 
 from ultralytics import YOLO
-from utilis.plots.py import colors, Annotator
+from utilis.plots.py import Colors, Annotator
 
 
 import supervision as sv  
