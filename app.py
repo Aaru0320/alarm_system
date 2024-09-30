@@ -34,7 +34,7 @@ def main():
     st.title("Object Detection with YOLO")
 
     # Input for video file name
-    video_file = st.text_input("Enter the name of the video file on the local server:", "store-aisle-detection.mp4")
+    video_file = st.text_input("Enter the name of the video file on the local server:", "temp_video.mp4")
 
     # Load the YOLOv8 model
     @st.cache_resource
