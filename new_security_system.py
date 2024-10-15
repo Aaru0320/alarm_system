@@ -41,7 +41,7 @@ class ObjectDetection:
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
 
     def predict(self, im0):
-        """Run prediction using a YOLO model for the input image `im0`."""
+        """Run prediction using a YOLO model for the input image im0."""
         results = self.model(im0)
         return results
 
