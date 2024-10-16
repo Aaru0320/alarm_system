@@ -2,6 +2,7 @@ This is a python based program that detects objects in a video streaming applica
 
 
 
+The below content is for **new_security_system.py**
 
 In this code, you're building a **real-time object detection system** using Streamlit and the YOLOv8 model, with the added functionality of sending **email alerts** when objects are detected. Here's a breakdown of what the code does and how you can describe it in the README:
 
@@ -67,3 +68,33 @@ This application is a **real-time object detection system** built using **YOLOv8
 - **OpenCV** for video capture and processing.
 - **Streamlit** for the web interface.
 - **SMTP** for sending email alerts.
+
+
+
+
+Why we have another file as **email_settings.py**
+
+In the `email_settings.py` file, the purpose of the code is to store **email credentials** that are used to send automated email notifications in the application.
+
+### Purpose:
+- **`password`**: This is the app-specific password generated for the sender's Gmail account (in this case, `aarushivishwakarma65@gmail.com`). It allows the application to authenticate and log into the Gmail SMTP server to send emails.
+- **`from_email`**: This is the email address from which the notification emails will be sent. The email must match the one used to generate the app password for security reasons.
+- **`to_email`**: This is the recipient's email address, where the alerts or notifications will be sent (in this case, `kunal@xynocast.com`).
+
+### Why This Code Is Used:
+1. **Automated Email Alerts**: The application (e.g., an object detection system) sends notifications via email when certain events (like detection of objects) occur. This is useful in security systems or surveillance setups.
+   
+2. **Security**: By storing the email credentials separately in a file, the application can securely access the necessary details without hardcoding sensitive information directly into the main logic.
+
+3. **Modular Setup**: Keeping the email settings in a separate file makes the code more modular and easier to manage. If the email credentials or recipient changes, you can update them in the `email_settings.py` file without modifying the main codebase.
+
+### Example for README:
+```markdown
+### Email Settings
+
+The `email_settings.py` file stores the email credentials required for sending notifications from the application. These credentials include:
+- `password`: An app-specific password for the Gmail account used to send the email.
+- `from_email`: The sender's email address.
+- `to_email`: The recipient's email address for receiving notifications.
+
+The email functionality is used to notify users when specific events (e.g., object detection) occur in the system.
