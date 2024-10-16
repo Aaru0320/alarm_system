@@ -44,7 +44,10 @@ In this code, you are building a **Streamlit-based Object Detection Web App** us
 **Potential Use Cases**
 - **Security systems**: You can use this application to monitor security footage and detect objects of interest (e.g., people, vehicles).
 - **Object tracking and analytics**: It can be expanded for real-time object tracking and analytics by processing video streams.
-- **Custom deployments**: Useful in industries requiring real-time object detection, such as traffic monitoring, warehouse management, or retail analytics. 
+- **Custom deployments**: Useful in industries requiring real-time object detection, such as traffic monitoring, warehouse management, or retail analytics.
+
+The command to run app_2.py is:-  **streamlit run app_2.py**
+This code is running on a port **localhost:8505**
 
 
 
@@ -110,6 +113,10 @@ Here's what this code aims to achieve, and how it works:
 
 
 
+The command to run app_2.py is:-  **streamlit run app_3.py**
+This code is running on a port **localhost:8505**
+
+
 **Usage of configuration file**
 
 This section of the configuration file is used to configure **Cloudflare Tunnel**, which securely exposes local services to the internet without needing to open ports or configure a firewall. Here’s a breakdown of the purpose of each part of the code:
@@ -128,14 +135,14 @@ The `ingress` section defines how incoming traffic will be routed through the tu
 - **- hostname: myapp.ai4india.online**
   - This defines a **public hostname** that Cloudflare will associate with your tunnel. When users visit `myapp.ai4india.online`, Cloudflare will route traffic to this tunnel.
   
-- **service: http://localhost:8502**
-  - This specifies that the local service running on `http://localhost:8502` (on your machine) will be exposed to the public via the `myapp.ai4india.online` domain. For example, if you're running a **Streamlit app** on port `8502` locally, this will make it accessible through the internet under the given hostname.
+- **service: http://localhost:8505**
+  - This specifies that the local service running on `http://localhost:8502` (on your machine) will be exposed to the public via the `myapp.ai4india.online` domain. For example, if you're running a **Streamlit app** on port `8505` locally, this will make it accessible through the internet under the given hostname.
   
 - **- service: http_status:404**
   - This serves as a fallback route. If no specific hostname or service matches the incoming request, the tunnel will respond with an HTTP **404 status** (Not Found). This ensures that invalid requests that don't match the hostname (`myapp.ai4india.online`) get a 404 response rather than hitting your local services.
 
 **Purpose of this Configuration:**
-1. **Expose Local Service**: This configuration is exposing a service running on `http://localhost:8502` (like a web app or API) to the public via the hostname `myapp.ai4india.online`.
+1. **Expose Local Service**: This configuration is exposing a service running on `http://localhost:8505` (like a web app or API) to the public via the hostname `myapp.ai4india.online`.
 2. **Security**: Cloudflare Tunnel allows this exposure securely without the need to open ports in your firewall or configure your network manually.
 3. **Fallback Handling**: The 404 rule ensures that any requests that don't match your intended routes (e.g., a mistyped domain) are properly handled by returning a **404 Not Found** response.
 
@@ -208,16 +215,16 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 **8. Expose the Streamlit Port**
 ```dockerfile
-EXPOSE 8502
+EXPOSE 8505
 ```
-- **EXPOSE 8502**: This command tells Docker to expose port `8502`, which is the default port for Streamlit. 
+- **EXPOSE 8505**: This command tells Docker to expose port `8505`, which is the default port for Streamlit. 
 - **Purpose**: It allows external access to the app on this port when the container is run.
 
 **9. Run the Streamlit App**
 ```dockerfile
-CMD ["streamlit", "run", "app_3.py", "--server.port=8502", "--server.address=0.0.0.0"]
+CMD ["streamlit", "run", "app_3.py", "--server.port=8505", "--server.address=0.0.0.0"]
 ```
-- **CMD**: This sets the default command that will run when the container starts. It runs the `app_3.py` Streamlit app on port `8502` and binds it to all available network interfaces (`0.0.0.0`).
+- **CMD**: This sets the default command that will run when the container starts. It runs the `app_3.py` Streamlit app on port `8505` and binds it to all available network interfaces (`0.0.0.0`).
 - **Purpose**: It starts the Streamlit application when the container is launched, making it accessible via the exposed port.
 
 **Summary:**
@@ -227,7 +234,7 @@ The Dockerfile performs the following key actions:
 1. Sets up a minimal Python 3.9 environment.
 2. Installs necessary system and Python dependencies for video processing and object detection.
 3. Copies the application files into the container.
-4. Exposes port `8502`, which is used by Streamlit.
+4. Exposes port `8505`, which is used by Streamlit.
 5. Runs the Streamlit app (`app_3.py`) when the container is started.
 
 By containerizing the app, this Dockerfile ensures that the application can be deployed consistently across different environments without needing to manually install dependencies or deal with compatibility issues.
