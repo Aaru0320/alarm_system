@@ -98,3 +98,13 @@ The `email_settings.py` file stores the email credentials required for sending n
 - `to_email`: The recipient's email address for receiving notifications.
 
 The email functionality is used to notify users when specific events (e.g., object detection) occur in the system.
+
+
+
+
+
+**The files app.py, security_alarm_system.py, security_alarm_system_2.py are the working drafts .**
+
+
+
+The command to run new_security_system.py :- **python new_security_system.py**
