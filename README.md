@@ -238,3 +238,13 @@ The Dockerfile performs the following key actions:
 5. Runs the Streamlit app (`app_3.py`) when the container is started.
 
 By containerizing the app, this Dockerfile ensures that the application can be deployed consistently across different environments without needing to manually install dependencies or deal with compatibility issues.
+
+
+
+
+
+The command to run it on local server is :- **docker run -p 8505:8505 streamlit-yolo-app**
+
+The command to run it across the internet server is :- **cloudflared tunnel --config /Users/aarushivishwakarma/theft_Detection/streamlit-yolo-app/configuration-file run my-tunnel** (this command has to run in another terminal and don't stop it otherwise it will not run the server across internet)
+
+The website is **myapp.ai4india.online**
