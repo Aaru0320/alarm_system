@@ -72,7 +72,7 @@ This application is a **real-time object detection system** built using **YOLOv8
 
 
 
-Why we have another file as **email_settings.py**
+**Why we have another file as **email_settings.py**
 
 In the `email_settings.py` file, the purpose of the code is to store **email credentials** that are used to send automated email notifications in the application.
 
