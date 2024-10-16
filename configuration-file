@@ -3,5 +3,5 @@ credentials-file: /Users/aarushivishwakarma/.cloudflared/0c03c186-1ca2-441c-87c2
 
 ingress:
   - hostname: myapp.ai4india.online
-    service: http://localhost:8502
+    service: http://localhost:8505
   - service: http_status:404
