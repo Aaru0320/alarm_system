@@ -4,7 +4,7 @@ This is a python based program that detects objects in a video streaming applica
 
 The below content is for **new_security_system.py**
 
-In this code, you're building a **real-time object detection system** using Streamlit and the YOLOv8 model, with the added functionality of sending **email alerts** when objects are detected. Here's a breakdown of what the code does and how you can describe it in the README:
+In this code, you're building a **real-time object detection system** using Streamlit and the YOLOv8 model, with the added functionality of sending **email alerts** when objects are detected.
 
 ### **Purpose of the Code:**
 This application is designed to detect objects from a video stream or live webcam feed using the **YOLOv8** object detection model. It displays the video frames with bounding boxes around detected objects and sends an email alert when objects are detected. The application can work with either pre-recorded video files (uploaded by the user) or a live webcam feed.
